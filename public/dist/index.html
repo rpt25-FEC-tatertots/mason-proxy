@@ -4,6 +4,26 @@
     <title>mason proxy</title>
   </head>
   <body>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <div id="bannerAndTitle">Component 1: Banner and title</div>
+    <div id="imageService">Component 2: Images Slider</div>
+    <div id="sizingAndInventory">Component 3: Sizing and Inventory</div>
+    <div id="detailedProductImages">Component 4: Detailed Product Images</div>
+    <div id="app">Component 6: Similar to this Product</div>
+    <div id="overview">Component 5: Overview</div>
+    <div id="reviews">Component 7: Reviews</div>
+    <div id="materialsAndLocations">Component 8: Materials and Locations</div>
+
+    <script src="http://localhost:6008/bundle.js"></script>
+
+    <script>
+      ReactDOM.render(React.createElement(<App/>),
+      document.getElementById('app'));
+    </script>
+
+
+
     <div id="app"></div>
     <script type="text/javascript" src="bundle.js"></script>
   </body>
