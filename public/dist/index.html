@@ -12,12 +12,18 @@
     <div id="imageService">Component 2: Images Slider</div>
     <div id="sizingAndInventory">Component 3: Sizing and Inventory</div>
     <div id="detailedProductImages">Component 4: Detailed Product Images</div>
+    <div id="overviewService">Component 5: Overview</div>
     <div id="similar">Component 6: Similar to this Product</div>
-    <div id="overview">Component 5: Overview</div>
     <div id="reviews">Component 7: Reviews</div>
     <div id="materialsAndLocations">Component 8: Materials and Locations</div>
 
+    <script src="http://localhost:6007/overviewBundle.js"></script>
     <script src="http://localhost:6008/similarBundle.js"></script>
+
+    <script>
+      ReactDOM.render(React.createElement(<OverviewComponent/>),
+      document.getElementById('overviewService'));
+    </script>
 
     <script>
       ReactDOM.render(React.createElement(<SimilarProductsComponent/>),
