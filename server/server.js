@@ -6,6 +6,6 @@ app.use(express.static('./public/dist'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.listen(6001, () => {
-  console.log('listening on port 6001!');
+app.listen(3000, () => {
+  console.log('listening on port 3000!');
 });
