@@ -8,8 +8,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get('/overview/icons', (req, res) => {
-  //make a get request to the overview SERVICE SERVER
-  console.log('REQUEST: ', req.query.product_id)
+  // console.log('REQUEST: ', req.query.product_id)
   const { product_id } = req.query;
   axios.get(`http://localhost:6007/overview/icons?product_id=${product_id}`)
     .then((response) => {
@@ -18,7 +17,6 @@ app.get('/overview/icons', (req, res) => {
     .catch((error) => {
       console.log('ERROR IN PROXY SERVER: ', error)
     })
-  // res.send(200);
 })
 
 app.listen(3000, () => {
