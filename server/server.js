@@ -31,7 +31,14 @@ app.get('/overview/icons', (req, res) => {
 })
 
 app.get('/similar', (req, res) => {
-  res.send(200);
+  const { product_id } = req.query;
+  axios.get(`http://localhost:5008/similar?product_id=${product_id}`)
+    .then((response) => {
+      res.send(response.data)
+    })
+    .catch((error) => {
+      console.log('ERROR IN PROXY SERVER: ', error)
+    })
 })
 
 app.get('/api/locations', (req, res) => {
