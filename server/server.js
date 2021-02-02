@@ -18,10 +18,10 @@ app.get('/photos', (req, res) => {
   })
 })
 
-app.get('/overview/icons', (req, res) => {
+app.get('/overview', (req, res) => {
   // console.log('REQUEST: ', req.query.product_id)
   const { product_id } = req.query;
-  axios.get(`http://localhost:5007/overview/icons?product_id=${product_id}`)
+  axios.get(`http://localhost:5007/overview?product_id=${product_id}`)
     .then((response) => {
       res.send(response.data)
     })
