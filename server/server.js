@@ -14,7 +14,7 @@ app.get('/title/:product_id', (req, res) => {
     res.send(response.data)
   })
   .catch((error) => {
-    console.log('ERROR IN PROXY SERVER: ', error)
+    console.log('ERROR IN PROXY SERVER FOR TITLE: ', error)
   })
 })
 
@@ -25,7 +25,7 @@ app.get('/photos/:product_id', (req, res) => {
     res.send(response.data)
   })
   .catch((error) => {
-    console.log('ERROR IN PROXY SERVER: ', error)
+    console.log('ERROR IN PROXY SERVER FOR PHOTOS: ', error)
   })
 })
 
@@ -37,7 +37,7 @@ app.get('/overview', (req, res) => {
       res.send(response.data)
     })
     .catch((error) => {
-      console.log('ERROR IN PROXY SERVER: ', error)
+      console.log('ERROR IN PROXY SERVER FOR OVERVIEW: ', error)
     })
 })
 
@@ -49,7 +49,7 @@ app.get('/overview/:product_id', (req, res) => {
       res.send(response.data)
     })
     .catch((error) => {
-      console.log('ERROR IN PROXY SERVER: ', error)
+      console.log('ERROR IN PROXY SERVER FOR OVERVIEW 2: ', error)
     })
 })
 
@@ -60,7 +60,18 @@ app.get('/similar', (req, res) => {
       res.send(response.data)
     })
     .catch((error) => {
-      console.log('ERROR IN PROXY SERVER: ', error)
+      console.log('ERROR IN PROXY SERVER FOR SIMILAR: ', error)
+    })
+})
+
+app.get('/similar/:product_id', (req, res) => {
+  const { product_id } = req.params;
+  axios.get(`http://localhost:5008/similar/${product_id}`)
+    .then((response) => {
+      res.send(response.data)
+    })
+    .catch((error) => {
+      console.log('ERROR IN PROXY SERVER FOR SIMILAR: ', error)
     })
 })
 
