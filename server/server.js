@@ -18,8 +18,21 @@ app.get('/title/:product_id', (req, res) => {
   })
 })
 
+app.get('/photos', (req, res) => {
+  const { product_id } = req.params;
+  console.log('PINGED PHOTOS ROUTE')
+  axios.get(`http://localhost:5001/photos`)
+  .then((response) => {
+    res.send(response.data)
+  })
+  .catch((error) => {
+    console.log('ERROR IN PROXY SERVER FOR PHOTOS: ', error)
+  })
+})
+
 app.get('/photos/:product_id', (req, res) => {
   const { product_id } = req.params;
+  console.log('PINGED PHOTOS ROUTE')
   axios.get(`http://localhost:5001/photos/${product_id}`)
   .then((response) => {
     res.send(response.data)
