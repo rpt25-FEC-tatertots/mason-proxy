@@ -1,11 +1,12 @@
 const express = require('express');
 const axios = require('axios');
-
+const cors = require('cors');
 const app = express();
 
 app.use('/:product_id' ,express.static('./public/dist'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cors());
 
 app.get('/title/:product_id', (req, res) => {
   const { product_id } = req.params;
@@ -32,7 +33,7 @@ app.get('/photos', (req, res) => {
 
 app.get('/photos/:product_id', (req, res) => {
   const { product_id } = req.params;
-  console.log('PINGED PHOTOS ROUTE')
+  console.log('PINGED PHOTOS ROUTE 2')
   axios.get(`http://localhost:5001/photos/${product_id}`)
   .then((response) => {
     res.send(response.data)
