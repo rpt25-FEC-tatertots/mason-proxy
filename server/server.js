@@ -3,7 +3,7 @@ const axios = require('axios');
 const cors = require('cors');
 const app = express();
 
-app.use('/:product_id' ,express.static('./public/dist'));
+app.use('/:product_id', express.static('./public/dist'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
@@ -19,18 +19,6 @@ app.get('/title/:product_id', (req, res) => {
   })
 })
 
-// app.get('/photos', (req, res) => {
-//   const { product_id } = req.params;
-//   console.log('PINGED PHOTOS ROUTE')
-//   axios.get(`http://localhost:5001/photos`)
-//   .then((response) => {
-//     res.send(response.data)
-//   })
-//   .catch((error) => {
-//     console.log('ERROR IN PROXY SERVER FOR PHOTOS 1: ', error)
-//   })
-// })
-
 app.get('/photos/:product_id', (req, res) => {
   const { product_id } = req.params;
   console.log('PINGED PHOTOS ROUTE 2')
@@ -43,18 +31,6 @@ app.get('/photos/:product_id', (req, res) => {
   })
 })
 
-// app.get('/overview', (req, res) => {
-//   // console.log('REQUEST: ', req.query.product_id)
-//   const { product_id } = req.params;
-//   axios.get(`http://localhost:5007/overview`)
-//     .then((response) => {
-//       res.send(response.data)
-//     })
-//     .catch((error) => {
-//       console.log('ERROR IN PROXY SERVER FOR OVERVIEW 1: ', error)
-//     })
-// })
-
 app.get('/overview/:product_id', (req, res) => {
   console.log('PINGED OVERVIEWS')
   const { product_id } = req.params;
@@ -66,17 +42,6 @@ app.get('/overview/:product_id', (req, res) => {
       console.log('ERROR IN PROXY SERVER FOR OVERVIEW 2: ', error)
     })
 })
-
-// app.get('/similar', (req, res) => {
-//   const { product_id } = req.params;
-//   axios.get(`http://localhost:5008/similar/${product_id}`)
-//     .then((response) => {
-//       res.send(response.data)
-//     })
-//     .catch((error) => {
-//       console.log('ERROR IN PROXY SERVER FOR SIMILAR: ', error)
-//     })
-// })
 
 app.get('/similar/:product_id', (req, res) => {
   const { product_id } = req.params;
