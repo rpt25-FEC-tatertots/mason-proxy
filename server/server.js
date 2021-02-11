@@ -10,7 +10,7 @@ app.use(cors());
 
 app.get('/title/:product_id', (req, res) => {
   const { product_id } = req.params;
-  axios.get(`http://localhost:5003/title/${product_id}`)
+  axios.get(`http://localhost:5005/title/${product_id}`)
   .then((response) => {
     res.send(response.data)
   })
@@ -32,7 +32,6 @@ app.get('/photos/:product_id', (req, res) => {
 })
 
 app.get('/overview/:product_id', (req, res) => {
-  console.log('PINGED OVERVIEWS')
   const { product_id } = req.params;
   axios.get(`http://localhost:5007/overview/${product_id}`)
     .then((response) => {
@@ -54,6 +53,16 @@ app.get('/similar/:product_id', (req, res) => {
     })
 })
 
+app.get('/reviews/:product_id', (req, res) => {
+  const { product_id } = req.params;
+  axios.get(`http://localhost:5005/reviews/${product_id}`)
+    .then((response) => {
+      res.send(response.data)
+    })
+    .catch((error) => {
+      console.log('ERROR IN PROXY SERVER FOR SIMILAR: ', error)
+    })
+})
 // app.get('/api/locations', (req, res) => {
 //   const { product_id } = req.query;
 //   axios.get(`http://localhost:5002/api/locations?product_id=${product_id}`)
