@@ -19,10 +19,46 @@ app.get('/title/:product_id', (req, res) => {
   })
 })
 
-app.get('/photos/:product_id', (req, res) => {
+app.get('/images/mainImages/:product_id', (req, res) => {
   const { product_id } = req.params;
-  console.log('PINGED PHOTOS ROUTE 2')
-  axios.get(`http://localhost:5001/photos/${product_id}`)
+  console.log('PINGED IMAGES ROUTE')
+  axios.get(`http://localhost:5003/images/mainImages/${product_id}`)
+  .then((response) => {
+    res.send(response.data)
+  })
+  .catch((error) => {
+    console.log('ERROR IN PROXY SERVER FOR PHOTOS: ', error)
+  })
+})
+
+app.get('/images/thumbnailImages/:product_id', (req, res) => {
+  const { product_id } = req.params;
+  console.log('PINGED IMAGES THUMBNAIL ROUTE')
+  axios.get(`http://localhost:5003/images/thumbnailImages${product_id}`)
+  .then((response) => {
+    res.send(response.data)
+  })
+  .catch((error) => {
+    console.log('ERROR IN PROXY SERVER FOR PHOTOS: ', error)
+  })
+})
+
+app.get('/inventory/:product_id', (req, res) => {
+  const { product_id } = req.params;
+  console.log('PINGED INVENTORY ROUTE')
+  axios.get(`http://localhost:5004/inventory/${product_id}`)
+  .then((response) => {
+    res.send(response.data)
+  })
+  .catch((error) => {
+    console.log('ERROR IN PROXY SERVER FOR PHOTOS: ', error)
+  })
+})
+
+app.get('/product/:product_id', (req, res) => {
+  const { product_id } = req.params;
+  console.log('PINGED PRODUCT ROUTE')
+  axios.get(`http://localhost:5004/product/${product_id}`)
   .then((response) => {
     res.send(response.data)
   })
