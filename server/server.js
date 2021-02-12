@@ -96,7 +96,6 @@ app.get('/locations/:product_id', (req, res) => {
   console.log('PINGED LOCATIONS ROUTE')
   axios.get(`http://localhost:5002/locations/${product_id}`)
     .then((response) => {
-      console.log('RESPONSE FROM LOCATIONS: ', response.data)
       res.send(response.data)
     })
     .catch((error) => {
@@ -109,7 +108,6 @@ app.get('/materials/:product_id', (req, res) => {
   console.log('PINGED MATERIALS ROUTE')
   axios.get(`http://localhost:5002/materials/${product_id}`)
     .then((response) => {
-      console.log('RESPONSE FROM MATERIALS: ', response.data)
       res.send(response.data)
     })
     .catch((error) => {
