@@ -69,6 +69,7 @@ app.get('/product/:product_id', (req, res) => {
 
 app.get('/overview/:product_id', (req, res) => {
   const { product_id } = req.params;
+  console.log('PINGED OVERVIEW ROUTE')
   axios.get(`http://localhost:5007/overview/${product_id}`)
     .then((response) => {
       res.send(response.data)
@@ -80,6 +81,7 @@ app.get('/overview/:product_id', (req, res) => {
 
 app.get('/similar/:product_id', (req, res) => {
   const { product_id } = req.params;
+  console.log('PINGED SIMILAR ROUTE')
   axios.get(`http://localhost:5008/similar/${product_id}`)
     .then((response) => {
       res.send(response.data)
@@ -89,17 +91,31 @@ app.get('/similar/:product_id', (req, res) => {
     })
 })
 
-// app.get('/api/locations', (req, res) => {
-//   const { product_id } = req.query;
-//   axios.get(`http://localhost:5002/api/locations?product_id=${product_id}`)
-//     .then((response) => {
-//       console.log('RESPONSE FROM LOCATIONS: ', response.data)
-//       res.send(response.data)
-//     })
-//     .catch((error) => {
-//       console.log('ERROR IN PROXY SERVER: ', error)
-//     })
-// })
+app.get('/locations/:product_id', (req, res) => {
+  const { product_id } = req.params;
+  console.log('PINGED LOCATIONS ROUTE')
+  axios.get(`http://localhost:5002/locations/${product_id}`)
+    .then((response) => {
+      console.log('RESPONSE FROM LOCATIONS: ', response.data)
+      res.send(response.data)
+    })
+    .catch((error) => {
+      console.log('ERROR IN PROXY SERVER: ', error)
+    })
+})
+
+app.get('/materials/:product_id', (req, res) => {
+  const { product_id } = req.params;
+  console.log('PINGED MATERIALS ROUTE')
+  axios.get(`http://localhost:5002/materials/${product_id}`)
+    .then((response) => {
+      console.log('RESPONSE FROM MATERIALS: ', response.data)
+      res.send(response.data)
+    })
+    .catch((error) => {
+      console.log('ERROR IN PROXY SERVER: ', error)
+    })
+})
 
 app.listen(5000, () => {
   console.log('listening on port 5000!');
