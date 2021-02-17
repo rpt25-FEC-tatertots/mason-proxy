@@ -10,6 +10,7 @@ app.use(cors());
 
 app.get('/title/:product_id', (req, res) => {
   const { product_id } = req.params;
+  console.log('PINGED TITLE ROUTE')
   axios.get(`http://54.241.34.87:5005/title/${product_id}`)
   .then((response) => {
     res.send(response.data)
