@@ -10,7 +10,7 @@ app.use(cors());
 
 app.get('/title/:product_id', (req, res) => {
   const { product_id } = req.params;
-  axios.get(`http://localhost:5005/title/${product_id}`)
+  axios.get(`http://54.241.34.87:5005/title/${product_id}`)
   .then((response) => {
     res.send(response.data)
   })
@@ -22,7 +22,7 @@ app.get('/title/:product_id', (req, res) => {
 app.get('/images/mainImages/:product_id', (req, res) => {
   const { product_id } = req.params;
   console.log('PINGED IMAGES ROUTE')
-  axios.get(`http://localhost:5003/images/mainImages/${product_id}`)
+  axios.get(`http://54.241.34.87:5003/images/mainImages/${product_id}`)
   .then((response) => {
     res.send(response.data)
   })
@@ -34,7 +34,7 @@ app.get('/images/mainImages/:product_id', (req, res) => {
 app.get('/images/thumbnailImages/:product_id', (req, res) => {
   const { product_id } = req.params;
   console.log('PINGED IMAGES THUMBNAIL ROUTE')
-  axios.get(`http://localhost:5003/images/thumbnailImages${product_id}`)
+  axios.get(`http://54.241.34.87:5003/images/thumbnailImages${product_id}`)
   .then((response) => {
     res.send(response.data)
   })
@@ -46,7 +46,7 @@ app.get('/images/thumbnailImages/:product_id', (req, res) => {
 app.get('/inventory/:product_id', (req, res) => {
   const { product_id } = req.params;
   console.log('PINGED INVENTORY ROUTE')
-  axios.get(`http://localhost:5004/inventory/${product_id}`)
+  axios.get(`http://54.241.34.87:5004/inventory/${product_id}`)
   .then((response) => {
     res.send(response.data)
   })
@@ -58,7 +58,7 @@ app.get('/inventory/:product_id', (req, res) => {
 app.get('/product/:product_id', (req, res) => {
   const { product_id } = req.params;
   console.log('PINGED PRODUCT ROUTE')
-  axios.get(`http://localhost:5004/product/${product_id}`)
+  axios.get(`http://54.241.34.87:5004/product/${product_id}`)
   .then((response) => {
     res.send(response.data)
   })
@@ -70,7 +70,7 @@ app.get('/product/:product_id', (req, res) => {
 app.get('/overview/:product_id', (req, res) => {
   const { product_id } = req.params;
   console.log('PINGED OVERVIEW ROUTE')
-  axios.get(`http://localhost:5007/overview/${product_id}`)
+  axios.get(`http://3.16.235.27:5007/overview/${product_id}`)
     .then((response) => {
       res.send(response.data)
     })
@@ -82,7 +82,7 @@ app.get('/overview/:product_id', (req, res) => {
 app.get('/similar/:product_id', (req, res) => {
   const { product_id } = req.params;
   console.log('PINGED SIMILAR ROUTE')
-  axios.get(`http://localhost:5008/similar/${product_id}`)
+  axios.get(`http://3.16.235.27:5008/similar/${product_id}`)
     .then((response) => {
       res.send(response.data)
     })
@@ -94,7 +94,7 @@ app.get('/similar/:product_id', (req, res) => {
 app.get('/locations/:product_id', (req, res) => {
   const { product_id } = req.params;
   console.log('PINGED LOCATIONS ROUTE')
-  axios.get(`http://localhost:5002/locations/${product_id}`)
+  axios.get(`http://3.136.32.206:5002/locations/${product_id}`)
     .then((response) => {
       res.send(response.data)
     })
@@ -106,7 +106,7 @@ app.get('/locations/:product_id', (req, res) => {
 app.get('/materials/:product_id', (req, res) => {
   const { product_id } = req.params;
   console.log('PINGED MATERIALS ROUTE')
-  axios.get(`http://localhost:5002/materials/${product_id}`)
+  axios.get(`http://3.136.32.206:5002/materials/${product_id}`)
     .then((response) => {
       res.send(response.data)
     })
