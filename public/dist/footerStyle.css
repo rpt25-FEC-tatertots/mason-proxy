@@ -1,0 +1,113 @@
+.footer {
+  background-color: black;
+  font-family: Nunito Sans;
+  color: white;
+}
+
+.topHalf {
+  display: flex;
+  /* flex-flow: row wrap;
+  flex: 1 0 100%; */
+  justify-content: space-around;
+  margin-right: -10px;
+  margin-left: -10px;
+  padding: 6rem 4rem;
+}
+
+.bottomHalf {
+  display: flex;
+  flex-flow: row wrap;
+  flex: 1 0 100%;
+  justify-content: space-around;
+  text-align: left;
+  padding: 4rem 4rem 12rem 4rem;
+}
+
+.topHalf > div {
+  width: 25%;
+}
+
+.sectionName {
+  width: 85%;
+  line-height: 1.14;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.sectionName+div {
+  width: 85%;
+  line-height: 1.75;
+}
+
+.fakeLink {
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.infoContainer {
+  flex-basis: 33.33%;
+}
+
+.subscribeText {
+  width: 75%;
+}
+
+.emailForm {
+  padding-top: 2rem;
+  border-color: white;
+  border-bottom: solid;
+  width: fit-content;
+}
+
+.emailInput {
+  background-color: transparent;
+  border-style: solid;
+  border-color: transparent;
+  color: white;
+}
+
+.signMeUp {
+  border-style: solid;
+  border-color: white;
+  border-radius: 5rem;
+  margin: 4rem 0rem;
+  padding: 5px 32px;
+  width: fit-content;
+  color: black;
+  background-color: white;
+  font-weight: bold;
+}
+
+.helpList {
+  padding: 0px;
+}
+
+.helpList > li {
+  list-style-type: none;
+  border-style: solid;
+  border-color: white;
+  border-radius: 5rem;
+  margin: 10px 0px;
+  padding: 5px 32px;
+  width: fit-content;
+  font-weight: bold;
+}
+
+.moreInfoContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.moreInfoContainer > div {
+  display: flex;
+  flex-direction: column;
+  color: #444;
+  height: auto;
+}
+
+.moreInfoContainer > div > div {
+  justify-content: space-around;
+  margin-top: 5px;
+}
