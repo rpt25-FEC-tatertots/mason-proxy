@@ -8,6 +8,18 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
+app.get('/product/:product_id', (req, res) => {
+  const { product_id } = req.params;
+  console.log('PINGED PRODUCT ROUTE')
+  axios.get(`http://54.241.34.87:5004/product/${product_id}`)
+  .then((response) => {
+    res.send(response.data)
+  })
+  .catch((error) => {
+    console.log('ERROR IN PROXY SERVER FOR PHOTOS: ', error)
+  })
+});
+
 app.get('/title/:product_id', (req, res) => {
   const { product_id } = req.params;
   console.log('PINGED TITLE ROUTE')
@@ -18,7 +30,19 @@ app.get('/title/:product_id', (req, res) => {
   .catch((error) => {
     console.log('ERROR IN PROXY SERVER FOR TITLE: ', error)
   })
-})
+});
+
+app.get('/reviews/:product_id', (req, res) => {
+  const { product_id } = req.params;
+  console.log('PINGED REVIEWS ROUTE')
+  axios.get(`http://54.241.34.87:5005/reviews/${product_id}`)
+  .then((response) => {
+    res.send(response.data)
+  })
+  .catch((error) => {
+    console.log('ERROR IN PROXY SERVER FOR PHOTOS: ', error)
+  })
+});
 
 app.get('/images/mainImages/:product_id', (req, res) => {
   const { product_id } = req.params;
@@ -35,7 +59,19 @@ app.get('/images/mainImages/:product_id', (req, res) => {
 app.get('/images/thumbnailImages/:product_id', (req, res) => {
   const { product_id } = req.params;
   console.log('PINGED IMAGES THUMBNAIL ROUTE')
-  axios.get(`http://54.241.34.87:5003/images/thumbnailImages${product_id}`)
+  axios.get(`http://54.241.34.87:5003/images/thumbnailImages/${product_id}`)
+  .then((response) => {
+    res.send(response.data)
+  })
+  .catch((error) => {
+    console.log('ERROR IN PROXY SERVER FOR PHOTOS: ', error)
+  })
+})
+
+app.get('/images/detailedImages/:product_id', (req, res) => {
+  const { product_id } = req.params;
+  console.log('PINGED IMAGES DETAILED ROUTE')
+  axios.get(`http://54.241.34.87:5003/images/detailedImages/${product_id}`)
   .then((response) => {
     res.send(response.data)
   })
@@ -56,10 +92,10 @@ app.get('/inventory/:product_id', (req, res) => {
   })
 })
 
-app.get('/product/:product_id', (req, res) => {
+app.get('/photos/:product_id', (req, res) => {
   const { product_id } = req.params;
-  console.log('PINGED PRODUCT ROUTE')
-  axios.get(`http://54.241.34.87:5004/product/${product_id}`)
+  console.log('PINGED DETAILED IMAGES ROUTE')
+  axios.get(`http://3.136.32.206:5001/photos/${product_id}`)
   .then((response) => {
     res.send(response.data)
   })
