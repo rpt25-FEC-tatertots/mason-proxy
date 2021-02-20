@@ -1,121 +1,120 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>mason proxy</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FEC-Tatertots</title>
+  <link rel='preconnect' href='https://fonts.gstatic.com'>
+  <link href='https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-    <link rel="stylesheet" href="footerStyle.css">
-  </head>
-  <body>
-    <script crossorigin src=“https://unpkg.com/react@17/umd/react.production.min.js”></script>
-    <script crossorigin src=“https://unpkg.com/react-dom@17/umd/react-dom.production.min.js”></script>
-    <script crossorigin src=“//unpkg.com/styled-components@4.0.1/dist/styled-components.min.js”></script>
-    <div id="title-banner"></div>
-    <div id="app"></div>
-    <div id="inventory"></div>
-    <div id="detailed-images"></div>
-    <div id="portal"></div>
-    <div id="overviewService"></div>
-    <div id="similar"></div>
-    <div id="sourcing"></div>
+  <link rel="stylesheet" href="footerStyle.css">
+</head>
+<body>
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+  <script src="//unpkg.com/styled-components@4.0.1/dist/styled-components.min.js"></script>
+  <div id='title-banner'>1: Banner and Title</div>
+  <div id='app'>2: Main Images Slider</div>
+  <div id='inventory'>3: Sizing and Inventory</div>
+  <div id='detailed-images'>4: Detailed Images</div>
+  <div id='portal'></div>
+  <div id='overviewService'>5: Overview</div>
+  <div id='similar'>6: Similar to this Product</div>
+  <div id='sourcing'>8: Materials & Locations</div>
 
-    <script src="http://54.241.34.87:5005/title_banner.js"></script>
-    <script src="http://54.241.34.87:5003/images/ImageService.js"></script>
-    <script src="http://54.241.34.87:5004/inventory/inventory.js"></script>
-    <script src="http://3.136.32.206:5001/photos/bundle.js"></script>
-    <script src="http://3.16.235.27:5007/overview/overviewBundle.js"></script>
-    <script src="http://3.16.235.27:5008/similar/similarBundle.js"></script>
-    <script src="http://3.136.32.206:5002/locations/bundle.js"></script>
+  <script src="http://54.241.34.87:5005/title_banner.js"></script>
+  <script src="http://54.241.34.87:5003/images/ImageService.js"></script>
+  <script src="http://54.241.34.87:5004/inventory/inventory.js"></script>
+  <script src="http://3.136.32.206:5001/photos/bundle.js"></script>
+  <script src="http://3.16.235.27:5007/overview/overviewBundle.js"></script>
+  <script src="http://3.16.235.27:5008/similar/similarBundle.js"></script>
+  <script src='http://3.136.32.206:5002/sourcing/bundle.js'></script>
 
-    <footer class="footer">
-      <div class="topHalf">
+  <footer class="footer">
+    <div class="topHalf">
+      <div>
+        <h2 class="sectionName">We guarantee everything we make.</h2>
         <div>
-          <h2 class="sectionName">We guarantee everything we make.</h2>
-          <div>
-            Because we know prioritizing durability results in consuming less energy, wasting less water and creating less trash.
-          </div>
-          <div class="fakeLink">View Ironclad Guarantee</div>
+          Because we know prioritizing durability results in consuming less energy, wasting less water and creating less trash.
         </div>
-        <div>
-          <h2 class="sectionName">Know how your clothes are made.</h2>
-          <div>
-            Everything we make has an impact on people and the planet. Learn more about our environmental and social responsibility program.
-          </div>
-          <div class="fakeLink">View Our Footprint</div>
-        </div>
-        <div>
-          <h2 class="sectionName">Keep your gear in play.</h2>
-          <div>
-            Buy used, trade in and fix your gear through Worn Wear.
-          </div>
-          <div class="fakeLink">Visit Worn Wear</div>
-        </div>
-        <div>
-          <h2 class="sectionName">We give back for every sale.</h2>
-          <div>
-            We’ve pledged 1% of sales to the preservation and restoration of the natural environment.
-          </div>
-          <div class="fakeLink">View 1% for the Planet</div>
-        </div>
+        <div class="fakeLink">View Ironclad Guarantee</div>
       </div>
-      <div class="bottomHalf">
-        <div class="infoContainer">
-          <h2 class="sectionName">Subscribe</h2>
-          <div>
-            <div class="subscribeText">
-              Sign up for exclusive offers, original stories, activism awareness, events and more.
-            </div>
-            <form class="emailForm">
-              <label>
-                <input class="emailInput" type="text" placeholder="Email Address"/>
-              </label>
-            </form>
-            <div class="signMeUp">Sign Me Up</div>
-          </div>
+      <div>
+        <h2 class="sectionName">Know how your clothes are made.</h2>
+        <div>
+          Everything we make has an impact on people and the planet. Learn more about our environmental and social responsibility program.
         </div>
-        <div class="infoContainer">
-          <h2 class="sectionName">Need Help?</h2>
-          <ul class="helpList">
-            <li>Help Center</li>
-            <li>Order Status</li>
-            <li>Returns and Exchanges</li>
-            <li>Product Care and Repair</li>
-            <li>Login</li>
-          </ul>
+        <div class="fakeLink">View Our Footprint</div>
+      </div>
+      <div>
+        <h2 class="sectionName">Keep your gear in play.</h2>
+        <div>
+          Buy used, trade in and fix your gear through Worn Wear.
+        </div>
+        <div class="fakeLink">Visit Worn Wear</div>
+      </div>
+      <div>
+        <h2 class="sectionName">We give back for every sale.</h2>
+        <div>
+          We’ve pledged 1% of sales to the preservation and restoration of the natural environment.
+        </div>
+        <div class="fakeLink">View 1% for the Planet</div>
+      </div>
+    </div>
+    <div class="bottomHalf">
+      <div class="infoContainer">
+        <h2 class="sectionName">Subscribe</h2>
+        <div>
           <div class="subscribeText">
-            If you are using a screen reader and having difficulty please call us at 1-800-638-6464
+            Sign up for exclusive offers, original stories, activism awareness, events and more.
           </div>
+          <form class="emailForm">
+            <label>
+              <input class="emailInput" type="text" placeholder="Email Address"/>
+            </label>
+          </form>
+          <div class="signMeUp">Sign Me Up</div>
         </div>
-        <div class="infoContainer">
-          <h2 class="sectionName">More Info</h2>
-          <div class="moreInfoContainer">
-            <div>
-              <div>Patagonia Action Works</div>
-              <div>Patagonia Provisions</div>
-              <div>Worn Wear</div>
-              <div>Gift Cards</div>
-              <div>Find a Store</div>
-              <div>Careers</div>
-              <div>Press</div>
-            </div>
-            <div>
-              <div>Patagonia Pro Program</div>
-              <div>1% For The Planet</div>
-              <div>International Orders</div>
-              <div>Group Sales</div>
-              <div>Privacy Policy</div>
-              <div>California Transparency</div>
-            </div>
+      </div>
+      <div class="infoContainer">
+        <h2 class="sectionName">Need Help?</h2>
+        <ul class="helpList">
+          <li>Help Center</li>
+          <li>Order Status</li>
+          <li>Returns and Exchanges</li>
+          <li>Product Care and Repair</li>
+          <li>Login</li>
+        </ul>
+        <div class="subscribeText">
+          If you are using a screen reader and having difficulty please call us at 1-800-638-6464
+        </div>
+      </div>
+      <div class="infoContainer">
+        <h2 class="sectionName">More Info</h2>
+        <div class="moreInfoContainer">
+          <div>
+            <div>Patagonia Action Works</div>
+            <div>Patagonia Provisions</div>
+            <div>Worn Wear</div>
+            <div>Gift Cards</div>
+            <div>Find a Store</div>
+            <div>Careers</div>
+            <div>Press</div>
+          </div>
+          <div>
+            <div>Patagonia Pro Program</div>
+            <div>1% For The Planet</div>
+            <div>International Orders</div>
+            <div>Group Sales</div>
+            <div>Privacy Policy</div>
+            <div>California Transparency</div>
           </div>
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
 
 
-
-    <div id="app"></div>
-    <script type="text/javascript" src="bundle.js"></script>
-  </body>
+</body>
 </html>
