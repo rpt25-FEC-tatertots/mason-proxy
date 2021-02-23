@@ -1,8 +1,10 @@
 const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
+const compression = require('compression');
 const app = express();
 
+app.use(compression());
 app.use('/:product_id', express.static('./public/dist'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
